@@ -21,6 +21,7 @@ part1 = function(input) {
 }
 
 part1(inputTest)
+part1(inputTest2)
 part1(input)
 
 part2 = function(input) {
@@ -40,5 +41,6 @@ part2 = function(input) {
 }
 
 part2(inputTest)
+part2(inputTest2)
 part2(input)
 
