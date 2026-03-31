@@ -1,3 +1,5 @@
+require(dplyr)
+require(tidyr)
 require(stringi)
 input <- readLines("~/workspace-private/adventofcode/adventofcode2015/input13.txt")
 
@@ -7,3 +9,8 @@ x <- stri_match_first_regex(i, "^(\\w+) would (-?\\d+) .*? (\\w+).$")[,c(2,4,3)]
 t <- cbind(x, x[order(x[,2]),c(2,1,3)])
 t <- data.frame(a=t[,1], b=t[,2], c=as.integer(t[,3]) + as.integer(t[,6]))
 t
+
+a = t %>% spread(a, c) 
+row.names(a) = a$b
+a = a[,-1]
+a + t(a)
